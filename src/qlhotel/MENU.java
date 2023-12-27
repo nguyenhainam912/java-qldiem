@@ -71,21 +71,22 @@ public class MENU extends javax.swing.JFrame {
         SinhVien = new javax.swing.JPanel();
         jLabel55 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
-        txtMAKH = new javax.swing.JTextField();
-        txtTenKH = new javax.swing.JTextField();
+        txtMASV = new javax.swing.JTextField();
+        txtHtSV = new javax.swing.JTextField();
         jLabel60 = new javax.swing.JLabel();
-        cbGTKH = new javax.swing.JComboBox<>();
+        cbGT = new javax.swing.JComboBox<>();
         jLabel61 = new javax.swing.JLabel();
-        txtDateKH = new javax.swing.JTextField();
+        txtSNSV = new javax.swing.JTextField();
         jLabel63 = new javax.swing.JLabel();
-        txtDCKH = new javax.swing.JTextField();
+        txtDCSV = new javax.swing.JTextField();
         jLabel64 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        tbKhachHang = new javax.swing.JTable();
+        tbSinhVien = new javax.swing.JTable();
         jLabel59 = new javax.swing.JLabel();
         btnAddSV = new javax.swing.JButton();
-        btnSuaKH = new javax.swing.JButton();
-        btnLuuKH = new javax.swing.JButton();
+        btnSuaSV = new javax.swing.JButton();
+        btnLuuSV = new javax.swing.JButton();
+        btNXoaSV = new javax.swing.JButton();
         TrangChu = new javax.swing.JPanel();
         jLabel38 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
@@ -93,14 +94,14 @@ public class MENU extends javax.swing.JFrame {
         Mon = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtMaMon = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtTenMon = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        tblMon = new javax.swing.JTable();
+        btnAddMon = new javax.swing.JButton();
+        btnSuaMon = new javax.swing.JButton();
+        btnLuuMon = new javax.swing.JButton();
         Diem = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -109,18 +110,21 @@ public class MENU extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        tblDiem = new javax.swing.JTable();
+        txtNgayThi = new javax.swing.JTextField();
+        TxtDiem = new javax.swing.JTextField();
+        txtDMaSV = new javax.swing.JComboBox<>();
+        txtHocKi = new javax.swing.JComboBox<>();
+        txtDMaMon = new javax.swing.JComboBox<>();
+        btnAddDiem = new javax.swing.JButton();
+        btnSuaDiem = new javax.swing.JButton();
+        btnLuuDiem = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(880, 750));
 
         pnMain.setBackground(new java.awt.Color(255, 255, 255));
-        pnMain.setPreferredSize(new java.awt.Dimension(1200, 750));
+        pnMain.setPreferredSize(new java.awt.Dimension(1400, 800));
 
         SildeMenu.setBackground(new java.awt.Color(230, 255, 255));
         SildeMenu.setAlignmentX(1.0F);
@@ -247,9 +251,11 @@ public class MENU extends javax.swing.JFrame {
                 .addGap(46, 46, 46))
         );
 
+        jPanel3.setPreferredSize(new java.awt.Dimension(2000, 784));
         jPanel3.setLayout(new java.awt.CardLayout());
 
         SinhVien.setBackground(new java.awt.Color(240, 255, 255));
+        SinhVien.setPreferredSize(new java.awt.Dimension(1200, 784));
 
         jLabel55.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         jLabel55.setText("Quản Lý Sinh Viên");
@@ -258,13 +264,13 @@ public class MENU extends javax.swing.JFrame {
 
         jLabel60.setText("Giới Tính");
 
-        cbGTKH.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nữ", "Khác" }));
+        cbGT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nam", "Nữ", "Khác" }));
 
         jLabel61.setText("Ngày Sinh");
 
         jLabel63.setText("Địa Chỉ");
 
-        tbKhachHang.setModel(new javax.swing.table.DefaultTableModel(
+        tbSinhVien.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -281,33 +287,35 @@ public class MENU extends javax.swing.JFrame {
                 "Mã SV", "Họ Tên", "Giới Tính", "Địa Chỉ", "Ngày Sinh"
             }
         ));
-        jScrollPane3.setViewportView(tbKhachHang);
+        jScrollPane3.setViewportView(tbSinhVien);
 
         jLabel59.setText("Họ Tên");
 
         btnAddSV.setText("Tạo");
-        btnAddSV.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnAddSVMouseClicked(evt);
-            }
-        });
         btnAddSV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddSVActionPerformed(evt);
             }
         });
 
-        btnSuaKH.setText("Sửa");
-        btnSuaKH.addActionListener(new java.awt.event.ActionListener() {
+        btnSuaSV.setText("Sửa");
+        btnSuaSV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSuaKHActionPerformed(evt);
+                btnSuaSVActionPerformed(evt);
             }
         });
 
-        btnLuuKH.setText("Lưu");
-        btnLuuKH.addActionListener(new java.awt.event.ActionListener() {
+        btnLuuSV.setText("Lưu");
+        btnLuuSV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLuuKHActionPerformed(evt);
+                btnLuuSVActionPerformed(evt);
+            }
+        });
+
+        btNXoaSV.setText("Xóa");
+        btNXoaSV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btNXoaSVActionPerformed(evt);
             }
         });
 
@@ -315,14 +323,6 @@ public class MENU extends javax.swing.JFrame {
         SinhVien.setLayout(SinhVienLayout);
         SinhVienLayout.setHorizontalGroup(
             SinhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(SinhVienLayout.createSequentialGroup()
-                .addGap(95, 95, 95)
-                .addComponent(btnAddSV)
-                .addGap(53, 53, 53)
-                .addComponent(btnSuaKH)
-                .addGap(76, 76, 76)
-                .addComponent(btnLuuKH)
-                .addGap(101, 525, Short.MAX_VALUE))
             .addGroup(SinhVienLayout.createSequentialGroup()
                 .addGroup(SinhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(SinhVienLayout.createSequentialGroup()
@@ -334,13 +334,13 @@ public class MENU extends javax.swing.JFrame {
                                     .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(24, 24, 24)
                                 .addGroup(SinhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtMAKH, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cbGTKH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtMASV, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(cbGT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(SinhVienLayout.createSequentialGroup()
                                 .addGap(1, 1, 1)
                                 .addComponent(jLabel61)
                                 .addGap(18, 18, 18)
-                                .addComponent(txtDateKH, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtSNSV, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(SinhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(SinhVienLayout.createSequentialGroup()
                                 .addGap(126, 126, 126)
@@ -352,15 +352,25 @@ public class MENU extends javax.swing.JFrame {
                                     .addComponent(jLabel59, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(39, 39, 39)
                         .addGroup(SinhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txtDCKH, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
-                            .addComponent(txtTenKH)))
+                            .addComponent(txtDCSV, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 168, Short.MAX_VALUE)
+                            .addComponent(txtHtSV)))
                     .addGroup(SinhVienLayout.createSequentialGroup()
                         .addGap(405, 405, 405)
                         .addComponent(jLabel55))
                     .addGroup(SinhVienLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 839, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(SinhVienLayout.createSequentialGroup()
+                .addGap(95, 95, 95)
+                .addComponent(btnAddSV)
+                .addGap(53, 53, 53)
+                .addComponent(btnSuaSV)
+                .addGap(76, 76, 76)
+                .addComponent(btnLuuSV)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btNXoaSV)
+                .addGap(33, 33, 33))
         );
         SinhVienLayout.setVerticalGroup(
             SinhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -370,28 +380,29 @@ public class MENU extends javax.swing.JFrame {
                 .addGap(61, 61, 61)
                 .addGroup(SinhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel56)
-                    .addComponent(txtMAKH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMASV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel59)
-                    .addComponent(txtTenKH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtHtSV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(SinhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel60)
-                    .addComponent(cbGTKH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbGT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel63)
-                    .addComponent(txtDCKH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDCSV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(SinhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel61)
-                    .addComponent(txtDateKH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtSNSV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addComponent(jLabel64)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
                 .addGroup(SinhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddSV)
-                    .addComponent(btnSuaKH)
-                    .addComponent(btnLuuKH))
+                    .addComponent(btnSuaSV)
+                    .addComponent(btnLuuSV)
+                    .addComponent(btNXoaSV))
                 .addGap(30, 30, 30))
         );
 
@@ -421,7 +432,7 @@ public class MENU extends javax.swing.JFrame {
             .addGroup(TrangChuLayout.createSequentialGroup()
                 .addGap(91, 91, 91)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 683, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(191, Short.MAX_VALUE))
+                .addContainerGap(991, Short.MAX_VALUE))
         );
         TrangChuLayout.setVerticalGroup(
             TrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -432,7 +443,7 @@ public class MENU extends javax.swing.JFrame {
                 .addComponent(jLabel40)
                 .addGap(70, 70, 70)
                 .addComponent(jLabel4)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addContainerGap(154, Short.MAX_VALUE))
         );
 
         jPanel3.add(TrangChu, "card2");
@@ -444,21 +455,9 @@ public class MENU extends javax.swing.JFrame {
 
         jLabel5.setText("Mã Môn");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
         jLabel6.setText("Tên Môn");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblMon.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -469,18 +468,28 @@ public class MENU extends javax.swing.JFrame {
                 "Mã Môn", "Tên Môn"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblMon);
 
-        jButton1.setText("Tạo");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnAddMon.setText("Tạo");
+        btnAddMon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnAddMonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Sửa");
+        btnSuaMon.setText("Sửa");
+        btnSuaMon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSuaMonActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Lưu");
+        btnLuuMon.setText("Lưu");
+        btnLuuMon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLuuMonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout MonLayout = new javax.swing.GroupLayout(Mon);
         Mon.setLayout(MonLayout);
@@ -498,18 +507,18 @@ public class MENU extends javax.swing.JFrame {
                             .addGroup(MonLayout.createSequentialGroup()
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtMaMon, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(190, 190, 190)
                                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(37, 37, 37)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtTenMon, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(MonLayout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(btnAddMon)
                                 .addGap(40, 40, 40)
-                                .addComponent(jButton2)
+                                .addComponent(btnSuaMon)
                                 .addGap(39, 39, 39)
-                                .addComponent(jButton3)))))
-                .addContainerGap(61, Short.MAX_VALUE))
+                                .addComponent(btnLuuMon)))))
+                .addContainerGap(991, Short.MAX_VALUE))
         );
         MonLayout.setVerticalGroup(
             MonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -519,16 +528,16 @@ public class MENU extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(MonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMaMon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTenMon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(39, 39, 39)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 340, Short.MAX_VALUE)
                 .addGroup(MonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(btnAddMon)
+                    .addComponent(btnSuaMon)
+                    .addComponent(btnLuuMon))
                 .addGap(55, 55, 55))
         );
 
@@ -549,7 +558,7 @@ public class MENU extends javax.swing.JFrame {
 
         jLabel11.setText("Điểm");
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tblDiem.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -560,35 +569,57 @@ public class MENU extends javax.swing.JFrame {
                 "Mã SV", "Mã Môn", "Ngày Thi", "Điểm", "Học Kì"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tblDiem);
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        txtNgayThi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                txtNgayThiActionPerformed(evt);
             }
         });
 
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        TxtDiem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                TxtDiemActionPerformed(evt);
             }
         });
 
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        txtDMaSV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                txtDMaSVActionPerformed(evt);
             }
         });
 
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        txtHocKi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2" }));
+        txtHocKi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                txtHocKiActionPerformed(evt);
             }
         });
 
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+        txtDMaMon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
+                txtDMaMonActionPerformed(evt);
+            }
+        });
+
+        btnAddDiem.setText("Tạo");
+        btnAddDiem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddDiemActionPerformed(evt);
+            }
+        });
+
+        btnSuaDiem.setText("Sửa");
+        btnSuaDiem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSuaDiemActionPerformed(evt);
+            }
+        });
+
+        btnLuuDiem.setText("Lưu");
+        btnLuuDiem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLuuDiemActionPerformed(evt);
             }
         });
 
@@ -609,25 +640,31 @@ public class MENU extends javax.swing.JFrame {
                                     .addGroup(DiemLayout.createSequentialGroup()
                                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(41, 41, 41)
-                                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(txtDMaSV, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                     .addGroup(DiemLayout.createSequentialGroup()
                                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(txtNgayThi, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(67, 67, 67)
                                 .addGroup(DiemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(29, 29, 29)
                                 .addGroup(DiemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jComboBox3, 0, 109, Short.MAX_VALUE)
-                                    .addComponent(jTextField7))
+                                    .addComponent(txtDMaMon, 0, 109, Short.MAX_VALUE)
+                                    .addComponent(TxtDiem))
                                 .addGap(90, 90, 90)
                                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 762, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(172, Short.MAX_VALUE))
+                                .addComponent(txtHocKi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 762, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(DiemLayout.createSequentialGroup()
+                                .addComponent(btnAddDiem)
+                                .addGap(85, 85, 85)
+                                .addComponent(btnSuaDiem)
+                                .addGap(93, 93, 93)
+                                .addComponent(btnLuuDiem)))))
+                .addContainerGap(972, Short.MAX_VALUE))
         );
         DiemLayout.setVerticalGroup(
             DiemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -638,19 +675,24 @@ public class MENU extends javax.swing.JFrame {
                 .addGroup(DiemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jLabel8)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtDMaSV, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtDMaMon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(DiemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(jLabel11)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNgayThi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TxtDiem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtHocKi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(41, 41, 41)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addGroup(DiemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnAddDiem)
+                    .addComponent(btnLuuDiem)
+                    .addComponent(btnSuaDiem))
+                .addGap(37, 37, 37))
         );
 
         jPanel3.add(Diem, "card5");
@@ -661,7 +703,7 @@ public class MENU extends javax.swing.JFrame {
             pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnMainLayout.createSequentialGroup()
                 .addGap(229, 229, 229)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, 1765, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(pnMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnMainLayout.createSequentialGroup()
@@ -684,11 +726,11 @@ public class MENU extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnMain, javax.swing.GroupLayout.DEFAULT_SIZE, 1086, Short.MAX_VALUE)
+            .addComponent(pnMain, javax.swing.GroupLayout.DEFAULT_SIZE, 2000, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnMain, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnMain, javax.swing.GroupLayout.DEFAULT_SIZE, 790, Short.MAX_VALUE)
         );
 
         pack();
@@ -710,15 +752,17 @@ public class MENU extends javax.swing.JFrame {
         Diem.setVisible(false);
     }//GEN-LAST:event_jLabel33MouseClicked
     
-    private void populateComboBoxRooms() {
+    private void populateComboBoxMon() {
     try (Connection connection = getConnect()) {
         if (connection != null) {
-            String query = "SELECT roomid FROM rooms";
+            String query = "SELECT MaMon FROM Mon";
             try (PreparedStatement preparedStatement = connection.prepareStatement(query);
                  ResultSet resultSet = preparedStatement.executeQuery()) {
                 while (resultSet.next()) {
-                    String roomid = resultSet.getString("roomid");
-                    //cbMaP.addItem(roomid); // Thêm mỗi mã phòng vào ComboBox
+                    String MaMon = resultSet.getString("MaMon");
+
+                    txtDMaMon.addItem(MaMon); // Thêm mỗi mã phòng vào ComboBox
+
                 }
             } catch (SQLException ex) {
                 System.err.println("Lỗi thực hiện truy vấn: " + ex.getMessage());
@@ -728,46 +772,60 @@ public class MENU extends javax.swing.JFrame {
         System.err.println("Lỗi kết nối đến cơ sở dữ liệu: " + ex.getMessage());
     }
 }
+private void populateComboBoxSV() {
+    try (Connection connection = getConnect()) {
+        if (connection != null) {
+            String query = "SELECT MaSv FROM SinhVien";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query);
+                 ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    String MaSv = resultSet.getString("MaSv");
 
+                    txtDMaSV.addItem(MaSv); // Thêm mỗi mã phòng vào ComboBox
+
+                }
+            } catch (SQLException ex) {
+                System.err.println("Lỗi thực hiện truy vấn: " + ex.getMessage());
+            }
+        }
+    } catch (SQLException ex) {
+        System.err.println("Lỗi kết nối đến cơ sở dữ liệu: " + ex.getMessage());
+    }
+}
     private void btnAddSVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddSVActionPerformed
         try (Connection connection = getConnect()) {
         // Kiểm tra nếu kết nối thành công
         if (connection != null) {
             // Lấy thông tin từ giao diện người dùng
-            String cid = txtMAKH.getText();
-            String cname = txtTenKH.getText();
-            String gender = (String) cbGTKH.getSelectedItem();
-            String ngaysinhkh = txtDateKH.getText();
-            String address = txtDCKH.getText();
+            String cid = txtMASV.getText();
+            String cname = txtHtSV.getText();
+            String gender = (String) cbGT.getSelectedItem();
+            String ngaysinhsv = txtSNSV.getText();
+            String address = txtDCSV.getText();
             
             // Lấy roomid từ combobox
             //String  roomid = (String) cbMaP.getSelectedItem();
             
 
             // Chuẩn bị câu truy vấn SQL để thêm khách hàng
-            String query = "INSERT INTO khachhang (cid, cname, mobile, nationality, gender, ngaysinhkh, idproof, address, checkin, roomid) VALUES (?, ?, ?, ?,?,?,?,?,?,?)";
+            String query = "INSERT INTO SinhVien (MaSv, HoTen, GioiTinh, NgaySinh, DiaChi) VALUES (?, ?, ?, ?,?)";
 
             try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                 // Thiết lập giá trị cho các tham số trong câu truy vấn
                 preparedStatement.setString(1, cid);
                 preparedStatement.setString(2, cname);
-                //preparedStatement.setString(3, mobile);
-                //preparedStatement.setString(4, nationality);
-                preparedStatement.setString(5, gender);
-                preparedStatement.setString(6, ngaysinhkh);
-                //preparedStatement.setString(7, idproof);
-                preparedStatement.setString(8, address);
-                //preparedStatement.setString(9, checkin);
-              //  preparedStatement.setString(10, roomid);
+                preparedStatement.setString(3, gender);
+                preparedStatement.setString(4, ngaysinhsv);
+                preparedStatement.setString(5, address);
 
                 // Thực hiện truy vấn thêm
                 int rowsAffected = preparedStatement.executeUpdate();
 
                 if (rowsAffected > 0) {
-                    System.out.println("Thêm khach hang thành công!");
-                    updateTableKhachHang();
+                    System.out.println("Thêm sinh vien thành công!");
+                    updateTableSinhVien();
                 } else {
-                    System.out.println("Thêm khach hang thất bại!");
+                    System.out.println("Thêm sinh vien thất bại!");
                 }
             } catch (SQLException ex) {
                 System.err.println("Lỗi thực hiện truy vấn thêm: " + ex.getMessage());
@@ -779,34 +837,30 @@ public class MENU extends javax.swing.JFrame {
     clearInputFields();
     }//GEN-LAST:event_btnAddSVActionPerformed
     
-    public void updateTableKhachHang() {
+    public void updateTableSinhVien() {
     try (Connection connection = getConnect()) {
         // Kiểm tra nếu kết nối thành công
         if (connection != null) {
             // Chuẩn bị câu truy vấn SQL để lấy dữ liệu từ bảng khachhang
-            String query = "SELECT * FROM khachhang";
+            String query = "SELECT * FROM SinhVien";
 
             try (PreparedStatement preparedStatement = connection.prepareStatement(query);
                  ResultSet resultSet = preparedStatement.executeQuery()) {
 
                 // Xóa dữ liệu hiện tại trong bảng
-                DefaultTableModel model = (DefaultTableModel) tbKhachHang.getModel();
+                DefaultTableModel model = (DefaultTableModel) tbSinhVien.getModel();
                 model.setRowCount(0);
 
                 // Duyệt qua kết quả và thêm vào bảng
                 while (resultSet.next()) {
-                    String cid = resultSet.getString("cid");
-                    String cname = resultSet.getString("cname");
-                    String mobile = resultSet.getString("mobile");
-                    String nationality = resultSet.getString("nationality");
-                    String gender = resultSet.getString("gender");
-                    String ngaysinhkh = resultSet.getString("ngaysinhkh");
-                    String idproof = resultSet.getString("idproof");
-                    String address = resultSet.getString("address");
-                    String checkin = resultSet.getString("checkin");
-                    String roomid = resultSet.getString("roomid");
+                    String cid = resultSet.getString("MaSv");
+                    String cname = resultSet.getString("HoTen");
+                    String ngaysinh = resultSet.getString("NgaySinh");
+                    String gioitinh = resultSet.getString("GioiTinh");
+                    String diachi = resultSet.getString("DiaCHi");
+                    
 
-                    model.addRow(new Object[]{cid, cname, mobile, nationality, gender, ngaysinhkh, idproof, address, checkin, roomid});
+                    model.addRow(new Object[]{cid, cname, gioitinh, diachi, ngaysinh});
                 }
             } catch (SQLException ex) {
                 System.err.println("Lỗi thực hiện truy vấn: " + ex.getMessage());
@@ -824,77 +878,62 @@ public class MENU extends javax.swing.JFrame {
         Diem.setVisible(false);
     }//GEN-LAST:event_jLabel32MouseClicked
 
-    private void btnSuaKHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaKHActionPerformed
-         int selectedRowIndex = tbKhachHang.getSelectedRow();
+    private void btnSuaSVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaSVActionPerformed
+         int selectedRowIndex = tbSinhVien.getSelectedRow();
 
     if (selectedRowIndex != -1) {
         // Get the values from the selected row
-        String cid = tbKhachHang.getValueAt(selectedRowIndex, 0).toString();
-        String cname = tbKhachHang.getValueAt(selectedRowIndex, 1).toString();
-        //String mobile = tbKhachHang.getValueAt(selectedRowIndex, 2).toString();
-       // String nationality = tbKhachHang.getValueAt(selectedRowIndex, 3).toString();
-        String gender = tbKhachHang.getValueAt(selectedRowIndex, 4).toString();
-        String ngaysinhkh = tbKhachHang.getValueAt(selectedRowIndex, 5).toString();
-       // String idproof = tbKhachHang.getValueAt(selectedRowIndex, 6).toString();
-        String address = tbKhachHang.getValueAt(selectedRowIndex, 7).toString();
-       // String checkin = tbKhachHang.getValueAt(selectedRowIndex, 8).toString();
-        String roomid = tbKhachHang.getValueAt(selectedRowIndex, 9).toString();
+        String cid = tbSinhVien.getValueAt(selectedRowIndex, 0).toString();
+        String cname = tbSinhVien.getValueAt(selectedRowIndex, 1).toString();
+        String gender = tbSinhVien.getValueAt(selectedRowIndex, 2).toString();
+        String address = tbSinhVien.getValueAt(selectedRowIndex, 3).toString();
+        String ngaysinh = tbSinhVien.getValueAt(selectedRowIndex, 4).toString();
 
         // Fill the input fields with the selected data
-        txtMAKH.setText(cid);
-        txtTenKH.setText(cname);
-        //txtSDTKH.setText(mobile);
-        //txtQTich.setText(nationality);
-        cbGTKH.setSelectedItem(gender);
-        txtDateKH.setText(ngaysinhkh);
-        //txtCccd.setText(idproof);
-        txtDCKH.setText(address);
-        //txtCheckin.setText(checkin);
-        //cbMaP.setSelectedItem(roomid);
+        txtMASV.setText(cid);
+        txtHtSV.setText(cname);
+        
+        cbGT.setSelectedItem(gender);
+        txtSNSV.setText(ngaysinh);
+        txtDCSV.setText(address);
     } else {
         System.out.println("Vui lòng chọn một dòng để sửa!");
     }
-    }//GEN-LAST:event_btnSuaKHActionPerformed
+    }//GEN-LAST:event_btnSuaSVActionPerformed
 
-    private void btnLuuKHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLuuKHActionPerformed
-        int selectedRowIndex = tbKhachHang.getSelectedRow();
+    private void btnLuuSVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLuuSVActionPerformed
+        int selectedRowIndex = tbSinhVien.getSelectedRow();
 
     if (selectedRowIndex != -1) {
         // Get the values from the input fields
-        String cid = txtMAKH.getText();
-        String cname = txtTenKH.getText();
+        String cid = txtMASV.getText();
+        String cname = txtHtSV.getText();
         
-        String gender = (String) cbGTKH.getSelectedItem();
-        String ngaysinhkh = txtDateKH.getText();
-        String address = txtDCKH.getText();
-        //String roomid = (String) cbMaP.getSelectedItem(); // Assuming you have a JComboBox for roomid
+        String gender = (String) cbGT.getSelectedItem();
+        String ngaysinhkh = txtSNSV.getText();
+        String address = txtDCSV.getText();
 
         try (Connection connection = getConnect()) {
             // Kiểm tra nếu kết nối thành công
             if (connection != null) {
                 // Chuẩn bị câu truy vấn SQL để cập nhật thông tin khách hàng
-                String query = "UPDATE khachhang SET cname = ?, mobile = ?, nationality = ?, gender = ?, ngaysinhkh = ?, idproof = ?, address = ?, checkin = ?, roomid = ? WHERE cid = ?";
+                String query = "UPDATE SinhVien SET HoTen = ?, GioiTinh = ?, DiaChi = ?, NgaySinh = ? Where MaSV = ?";
 
                 try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
                     // Thiết lập giá trị cho các tham số trong câu truy vấn
                     preparedStatement.setString(1, cname);
-                    //preparedStatement.setString(2, mobile);
-                    //preparedStatement.setString(3, nationality);
-                    preparedStatement.setString(4, gender);
-                    preparedStatement.setString(5, ngaysinhkh);
-                    //preparedStatement.setString(6, idproof);
-                    preparedStatement.setString(7, address);
-                    //preparedStatement.setString(8, checkin);
-                    //preparedStatement.setString(9, roomid);
-                    preparedStatement.setString(10, cid);
+                    preparedStatement.setString(2, gender);
+                    preparedStatement.setString(4, ngaysinhkh);
+                    preparedStatement.setString(3, address);
+                    preparedStatement.setString(5, cid);
 
                     // Thực hiện truy vấn cập nhật
                     int rowsAffected = preparedStatement.executeUpdate();
 
                     if (rowsAffected > 0) {
-                        System.out.println("Cập nhật thông tin khách hàng thành công!");
+                        System.out.println("Cập nhật thông tin Sinh vien thành công!");
                         // Sau khi cập nhật thành công, cập nhật lại bảng
-                        updateTableKhachHang();
+                        updateTableSinhVien();
                         // Xóa nội dung trong các trường nhập liệu sau khi lưu
                         clearInputFields();
                     } else {
@@ -910,7 +949,7 @@ public class MENU extends javax.swing.JFrame {
     } else {
         System.out.println("Vui lòng chọn một dòng để cập nhật!");
     }
-    }//GEN-LAST:event_btnLuuKHActionPerformed
+    }//GEN-LAST:event_btnLuuSVActionPerformed
 
     private void jLabel31MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel31MouseClicked
         // TODO add your handling code here:
@@ -918,104 +957,328 @@ public class MENU extends javax.swing.JFrame {
         SinhVien.setVisible(false);
         Mon.setVisible(false);
         Diem.setVisible(true);
+        this.populateComboBoxSV();
+        this.populateComboBoxMon();
     }//GEN-LAST:event_jLabel31MouseClicked
 
-    private void btnAddSVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAddSVMouseClicked
+    private void btnAddMonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddMonActionPerformed
         // TODO add your handling code here:
-        
-    }//GEN-LAST:event_btnAddSVMouseClicked
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
-
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
-
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox3ActionPerformed
-    public void updateTable() {
         try (Connection connection = getConnect()) {
         // Kiểm tra nếu kết nối thành công
-            if (connection != null) {
-            // Chuẩn bị câu truy vấn SQL để lấy dữ liệu từ bảng khachhang
-                String query = "SELECT * FROM rooms";
+        if (connection != null) {
+            // Lấy thông tin từ giao diện người dùng
+            String maMon = txtMaMon.getText();
+            String tenMon = txtTenMon.getText();
 
-                try (PreparedStatement preparedStatement = connection.prepareStatement(query);
-                     ResultSet resultSet = preparedStatement.executeQuery()) {
+            // Chuẩn bị câu truy vấn SQL để thêm khách hàng
+            String query = "INSERT INTO Mon (MaMon, TenMon) VALUES (?, ?)";
 
-                // Xóa dữ liệu hiện tại trong bảng
-                    //DefaultTableModel model = (DefaultTableModel) tbRoom.getModel();
-                    //model.setRowCount(0);
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                // Thiết lập giá trị cho các tham số trong câu truy vấn
+                preparedStatement.setString(1, maMon);
+                preparedStatement.setString(2, tenMon);
 
-                // Duyệt qua kết quả và thêm vào bảng
-                    while (resultSet.next()) {
-//                        String id  = resultSet.getString("roomid");
-//                        String roomno = resultSet.getString("roomNo");
-//                        String type = resultSet.getString("roomType");
-//                        String bed = resultSet.getString("bed");
-//                        String price = resultSet.getString("price");
-//
-//                        model.addRow(new Object[]{id, roomno, type, bed, price});
-//                        
-                    }
-            }   catch (SQLException ex) {
-                    System.err.println("Lỗi thực hiện truy vấn: " + ex.getMessage());
+                // Thực hiện truy vấn thêm
+                int rowsAffected = preparedStatement.executeUpdate();
+
+                if (rowsAffected > 0) {
+                    System.out.println("Thêm sinh vien thành công!");
+                    updateTableMon();
+                } else {
+                    System.out.println("Thêm sinh vien thất bại!");
+                }
+            } catch (SQLException ex) {
+                System.err.println("Lỗi thực hiện truy vấn thêm: " + ex.getMessage());
             }
         }
     } catch (SQLException ex) {
         System.err.println("Lỗi kết nối đến cơ sở dữ liệu: " + ex.getMessage());
     }
-}
-    public void updateTable2() {
+    clearInputFields();
+    }//GEN-LAST:event_btnAddMonActionPerformed
+
+    private void txtNgayThiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNgayThiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNgayThiActionPerformed
+
+    private void TxtDiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtDiemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtDiemActionPerformed
+
+    private void txtDMaSVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDMaSVActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDMaSVActionPerformed
+
+    private void txtHocKiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtHocKiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtHocKiActionPerformed
+
+    private void txtDMaMonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDMaMonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDMaMonActionPerformed
+
+    private void btnSuaMonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaMonActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = tblMon.getSelectedRow();
+
+    if (selectedRowIndex != -1) {
+        // Get the values from the selected row
+        String maMon = tblMon.getValueAt(selectedRowIndex, 0).toString();
+        String tenMon = tblMon.getValueAt(selectedRowIndex, 1).toString();
+        
+
+        // Fill the input fields with the selected data
+        txtMaMon.setText(maMon);
+        txtTenMon.setText(tenMon);
+        
+        
+    } else {
+        System.out.println("Vui lòng chọn một dòng để sửa!");
+    }
+    }//GEN-LAST:event_btnSuaMonActionPerformed
+
+    private void btnLuuMonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLuuMonActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = tblMon.getSelectedRow();
+
+    if (selectedRowIndex != -1) {
+        // Get the values from the input fields
+        String maMon = txtMaMon.getText();
+        String tenMon = txtTenMon.getText();
+
+        try (Connection connection = getConnect()) {
+            // Kiểm tra nếu kết nối thành công
+            if (connection != null) {
+                // Chuẩn bị câu truy vấn SQL để cập nhật thông tin khách hàng
+                String query = "UPDATE Mon SET TenMon = ? Where MaMon = ?";
+
+                try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                    // Thiết lập giá trị cho các tham số trong câu truy vấn
+                    preparedStatement.setString(1, tenMon);
+                    preparedStatement.setString(2, maMon);
+                    
+
+                    // Thực hiện truy vấn cập nhật
+                    int rowsAffected = preparedStatement.executeUpdate();
+
+                    if (rowsAffected > 0) {
+                        System.out.println("Cập nhật thông tin Sinh vien thành công!");
+                        // Sau khi cập nhật thành công, cập nhật lại bảng
+                        updateTableMon();
+                        // Xóa nội dung trong các trường nhập liệu sau khi lưu
+                        clearInputFields();
+                    } else {
+                        System.out.println("Không tìm thấy khách hàng để cập nhật!");
+                    }
+                } catch (SQLException ex) {
+                    System.err.println("Lỗi thực hiện truy vấn cập nhật: " + ex.getMessage());
+                }
+            }
+        } catch (SQLException ex) {
+            System.err.println("Lỗi kết nối đến cơ sở dữ liệu: " + ex.getMessage());
+        }
+    } else {
+        System.out.println("Vui lòng chọn một dòng để cập nhật!");
+    }
+    }//GEN-LAST:event_btnLuuMonActionPerformed
+
+    private void btNXoaSVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNXoaSVActionPerformed
+        // TODO add your handling code here:
+                                                   
+        int selectedRowIndex = tbSinhVien.getSelectedRow();
+
+    if (selectedRowIndex != -1) {
+        // Lấy giá trị của cột CID từ dòng được chọn
+        String cid = tbSinhVien.getValueAt(selectedRowIndex, 0).toString();
+
+        int confirm = JOptionPane.showConfirmDialog(this, "Bạn có chắc chắn xoa?", "Xác nhận xóa", JOptionPane.YES_NO_OPTION);
+        
+        if (confirm == JOptionPane.YES_OPTION) {
+            try (Connection connection = getConnect()) {
+                // Kiểm tra nếu kết nối thành công
+                if (connection != null) {
+                    // Chuẩn bị câu truy vấn SQL để xóa thông tin khách hàng
+                    String query = "DELETE FROM SinhVien WHERE MaSv = ?";
+
+                    try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                        // Thiết lập giá trị cho tham số trong câu truy vấn
+                        preparedStatement.setString(1, cid);
+
+                        // Thực hiện truy vấn xóa
+                        int rowsAffected = preparedStatement.executeUpdate();
+
+                        if (rowsAffected > 0) {
+                            System.out.println("Xóa thông tin khách hàng thành công!");
+                            // Sau khi xóa thành công, cập nhật lại bảng
+                            updateTableSinhVien();
+                            // Xóa nội dung trong các trường nhập liệu sau khi xóa
+                            clearInputFields();
+                        } else {
+                            System.out.println("Không tìm thấy khách hàng để xóa!");
+                        }
+                    } catch (SQLException ex) {
+                        System.err.println("Lỗi thực hiện truy vấn xóa: " + ex.getMessage());
+                    }
+                }
+            } catch (SQLException ex) {
+                System.err.println("Lỗi kết nối đến cơ sở dữ liệu: " + ex.getMessage());
+            }
+        }
+    } else {
+        System.out.println("Vui lòng chọn một dòng để xóa!");
+    }
+    }//GEN-LAST:event_btNXoaSVActionPerformed
+
+    private void btnSuaDiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaDiemActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = tblDiem.getSelectedRow();
+
+    if (selectedRowIndex != -1) {
+        // Get the values from the selected row
+        String maSV = tblDiem.getValueAt(selectedRowIndex, 0).toString();
+        String maMon = tblDiem.getValueAt(selectedRowIndex, 1).toString();
+        String ngayThi = tblDiem.getValueAt(selectedRowIndex, 2).toString();
+        String diem = tblDiem.getValueAt(selectedRowIndex, 3).toString();
+        String hocKi = tblDiem.getValueAt(selectedRowIndex, 4).toString();
+
+
+        // Fill the input fields with the selected data
+        txtDMaSV.setSelectedItem(maSV);
+                txtDMaMon.setSelectedItem(maMon);
+
+        txtNgayThi.setText(ngayThi);
+                TxtDiem.setText(diem);
+                               txtHocKi.setSelectedItem(hocKi);
+
+
+        
+        
+        
+    } else {
+        System.out.println("Vui lòng chọn một dòng để sửa!");
+    }
+    }//GEN-LAST:event_btnSuaDiemActionPerformed
+
+    private void btnAddDiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddDiemActionPerformed
+        // TODO add your handling code here:
+        try (Connection connection = getConnect()) {
+        // Kiểm tra nếu kết nối thành công
+        if (connection != null) {
+            // Lấy thông tin từ giao diện người dùng
+            String maMon = (String) txtDMaMon.getSelectedItem();
+            String maSV = (String) txtDMaSV.getSelectedItem();
+
+            String ngayThi = txtNgayThi.getText();
+            String diem = TxtDiem.getText();
+            String hocKi = (String) txtHocKi.getSelectedItem();
+
+
+            // Chuẩn bị câu truy vấn SQL để thêm khách hàng
+            String query = "INSERT INTO Diem (MaMon, MaSV, NgayThi,Diem,HocKi) VALUES (?, ?,?,?,?)";
+
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                // Thiết lập giá trị cho các tham số trong câu truy vấn
+                preparedStatement.setString(1, maMon);
+                preparedStatement.setString(2, maSV);
+                preparedStatement.setString(3, ngayThi);
+                preparedStatement.setString(4, diem);
+                preparedStatement.setString(5, hocKi);
+
+                // Thực hiện truy vấn thêm
+                int rowsAffected = preparedStatement.executeUpdate();
+
+                if (rowsAffected > 0) {
+                    System.out.println("Thêm sinh vien thành công!");
+                    updateTableDiem();
+                } else {
+                    System.out.println("Thêm sinh vien thất bại!");
+                }
+            } catch (SQLException ex) {
+                System.err.println("Lỗi thực hiện truy vấn thêm: " + ex.getMessage());
+            }
+        }
+    } catch (SQLException ex) {
+        System.err.println("Lỗi kết nối đến cơ sở dữ liệu: " + ex.getMessage());
+    }
+    clearInputFields();
+    }//GEN-LAST:event_btnAddDiemActionPerformed
+
+    private void btnLuuDiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLuuDiemActionPerformed
+        // TODO add your handling code here:
+              int selectedRowIndex = tblDiem.getSelectedRow();
+
+    if (selectedRowIndex != -1) {
+        // Get the values from the input fields
+        String maMon =(String) txtDMaMon.getSelectedItem();
+                String maSv =(String) txtDMaSV.getSelectedItem();
+
+        String ngayThi = txtNgayThi.getText();
+                String diem = TxtDiem.getText();
+
+                String hocKi =(String) txtHocKi.getSelectedItem();
+
+
+        try (Connection connection = getConnect()) {
+            // Kiểm tra nếu kết nối thành công
+            if (connection != null) {
+                // Chuẩn bị câu truy vấn SQL để cập nhật thông tin khách hàng
+                String query = "UPDATE Diem SET HocKi = ?, NgayThi= ?, Diem= ? Where MaMon = ? and MaSV = ?";
+
+                try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+                    // Thiết lập giá trị cho các tham số trong câu truy vấn
+                    preparedStatement.setString(1, hocKi);
+                    preparedStatement.setString(2, ngayThi);
+                    preparedStatement.setString(3, diem);
+                    preparedStatement.setString(4, maMon);
+                    preparedStatement.setString(5, maSv);
+                    
+
+                    // Thực hiện truy vấn cập nhật
+                    int rowsAffected = preparedStatement.executeUpdate();
+
+                    if (rowsAffected > 0) {
+                        System.out.println("Cập nhật thông tin Sinh vien thành công!");
+                        // Sau khi cập nhật thành công, cập nhật lại bảng
+                        updateTableDiem();
+                        // Xóa nội dung trong các trường nhập liệu sau khi lưu
+                        clearInputFields();
+                    } else {
+                        System.out.println("Không tìm thấy khách hàng để cập nhật!");
+                    }
+                } catch (SQLException ex) {
+                    System.err.println("Lỗi thực hiện truy vấn cập nhật: " + ex.getMessage());
+                }
+            }
+        } catch (SQLException ex) {
+            System.err.println("Lỗi kết nối đến cơ sở dữ liệu: " + ex.getMessage());
+        }
+    } else {
+        System.out.println("Vui lòng chọn một dòng để cập nhật!");
+    }
+    }//GEN-LAST:event_btnLuuDiemActionPerformed
+    
+    public void updateTableMon() {
     try (Connection connection = getConnect()) {
         // Kiểm tra nếu kết nối thành công
         if (connection != null) {
-            // Chuẩn bị câu truy vấn SQL để lấy dữ liệu từ bảng nhanvien
-            String query = "SELECT * FROM nhanvien";
+            // Chuẩn bị câu truy vấn SQL để lấy dữ liệu từ bảng khachhang
+            String query = "SELECT * FROM Mon";
 
             try (PreparedStatement preparedStatement = connection.prepareStatement(query);
                  ResultSet resultSet = preparedStatement.executeQuery()) {
 
                 // Xóa dữ liệu hiện tại trong bảng
-                //DefaultTableModel model = (DefaultTableModel) tbNhanVien.getModel();
-                //model.setRowCount(0);
+                DefaultTableModel model = (DefaultTableModel) tblMon.getModel();
+                model.setRowCount(0);
 
                 // Duyệt qua kết quả và thêm vào bảng
                 while (resultSet.next()) {
-//                    String eid  = resultSet.getString("eid");
-//                    String ename = resultSet.getString("ename");
-//                    String sdt = resultSet.getString("mobile");
-//                    String datenv = resultSet.getString("datenv");
-//                    String gioitinh = resultSet.getString("gender");
-//                    String email = resultSet.getString("emailid");
-//                    String usname = resultSet.getString("username");
-//                    String passw = resultSet.getString("pass");
-                   // DefaultTableModel model = (DefaultTableModel) tbRoom.getModel();
+                    String maMon = resultSet.getString("MaMon");
+                    String tenMon = resultSet.getString("TenMon");
+                    
+                    
 
-                    //model.addRow(new Object[]{eid, ename, sdt, datenv, gioitinh, email, usname, passw});
+                    model.addRow(new Object[]{maMon, tenMon});
                 }
             } catch (SQLException ex) {
                 System.err.println("Lỗi thực hiện truy vấn: " + ex.getMessage());
@@ -1025,27 +1288,60 @@ public class MENU extends javax.swing.JFrame {
         System.err.println("Lỗi kết nối đến cơ sở dữ liệu: " + ex.getMessage());
     }
 }
+    
+     public void updateTableDiem() {
+    try (Connection connection = getConnect()) {
+        // Kiểm tra nếu kết nối thành công
+        if (connection != null) {
+            // Chuẩn bị câu truy vấn SQL để lấy dữ liệu từ bảng khachhang
+            String query = "SELECT * FROM Diem";
+
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query);
+                 ResultSet resultSet = preparedStatement.executeQuery()) {
+
+                // Xóa dữ liệu hiện tại trong bảng
+                DefaultTableModel model = (DefaultTableModel) tblDiem.getModel();
+                model.setRowCount(0);
+
+                // Duyệt qua kết quả và thêm vào bảng
+                while (resultSet.next()) {
+                    String maSv = resultSet.getString("MaSv");
+                    String maMon = resultSet.getString("MaMon");
+                    String hocKi = resultSet.getString("HocKi");
+                    String ngayThi = resultSet.getString("NgayThi");
+                    String diem = resultSet.getString("Diem");
+
+                    model.addRow(new Object[]{maSv, maMon,ngayThi,diem,hocKi});
+                }
+            } catch (SQLException ex) {
+                System.err.println("Lỗi thực hiện truy vấn: " + ex.getMessage());
+            }
+        }
+    } catch (SQLException ex) {
+        System.err.println("Lỗi kết nối đến cơ sở dữ liệu: " + ex.getMessage());
+    }
+}
+    
+    
+    
     private void clearInputFields() {
     // Xóa nội dung trong các trường nhập liệu
-//    txtID.setText("");
-//    txtSoPhong.setText("");
-//    txtLoaiPhong.setSelectedIndex(0);
-//    txtLoaiGiuong.setSelectedIndex(0);
-//    txtPrice.setText("");
-//    txtTenNV.setText("");
-//    txtMaNV.setText("");
-//    txtSDTNV.setText("");
-//    txtDangNhap.setText("");
-//    txtDate.setText("");
-//    txtMK.setText("");
-//    cbGTNV.setSelectedIndex(0);
-//    txtMail.setText("");
-    txtMAKH.setText("");
-    //cbMaP.setSelectedItem(0);
-    txtTenKH.setText("");
-    cbGTKH.setSelectedItem(0);
-    txtDateKH.setText("");
-    txtDCKH.setText("");
+
+    txtMASV.setText("");
+    txtHtSV.setText("");
+    cbGT.setSelectedItem(0);
+    txtSNSV.setText("");
+    txtDCSV.setText("");
+    
+    txtMaMon.setText("");
+    txtTenMon.setText("");
+    
+    txtDMaSV.setSelectedItem(0);
+        txtDMaMon.setSelectedItem(0);
+    txtNgayThi.setText("");
+    TxtDiem.setText("");
+    txtHocKi.setSelectedItem(0);
+
     
 }
     
@@ -1083,9 +1379,13 @@ public class MENU extends javax.swing.JFrame {
             
             // Gọi phương thức updateTable ngay sau khi khởi tạo
                 //form.updateTable();
-                //form.updateTable2();
+                form.updateTableMon();
+                form.updateTableDiem();
+
                 //form.updateTableKhachHang();
-                //form.populateComboBoxRooms();
+                form.populateComboBoxSV();
+                form.populateComboBoxMon();
+
                 form.setVisible(true);
                 
             }
@@ -1098,16 +1398,18 @@ public class MENU extends javax.swing.JFrame {
     private javax.swing.JPanel SildeMenu;
     private javax.swing.JPanel SinhVien;
     private javax.swing.JPanel TrangChu;
+    private javax.swing.JTextField TxtDiem;
+    private javax.swing.JButton btNXoaSV;
+    private javax.swing.JButton btnAddDiem;
+    private javax.swing.JButton btnAddMon;
     private javax.swing.JButton btnAddSV;
-    private javax.swing.JButton btnLuuKH;
-    private javax.swing.JButton btnSuaKH;
-    private javax.swing.JComboBox<String> cbGTKH;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JButton btnLuuDiem;
+    private javax.swing.JButton btnLuuMon;
+    private javax.swing.JButton btnLuuSV;
+    private javax.swing.JButton btnSuaDiem;
+    private javax.swing.JButton btnSuaMon;
+    private javax.swing.JButton btnSuaSV;
+    private javax.swing.JComboBox<String> cbGT;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1142,17 +1444,19 @@ public class MENU extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField7;
     private javax.swing.JPanel pnMain;
-    private javax.swing.JTable tbKhachHang;
-    private javax.swing.JTextField txtDCKH;
-    private javax.swing.JTextField txtDateKH;
-    private javax.swing.JTextField txtMAKH;
-    private javax.swing.JTextField txtTenKH;
+    private javax.swing.JTable tbSinhVien;
+    private javax.swing.JTable tblDiem;
+    private javax.swing.JTable tblMon;
+    private javax.swing.JTextField txtDCSV;
+    private javax.swing.JComboBox<String> txtDMaMon;
+    private javax.swing.JComboBox<String> txtDMaSV;
+    private javax.swing.JComboBox<String> txtHocKi;
+    private javax.swing.JTextField txtHtSV;
+    private javax.swing.JTextField txtMASV;
+    private javax.swing.JTextField txtMaMon;
+    private javax.swing.JTextField txtNgayThi;
+    private javax.swing.JTextField txtSNSV;
+    private javax.swing.JTextField txtTenMon;
     // End of variables declaration//GEN-END:variables
 }

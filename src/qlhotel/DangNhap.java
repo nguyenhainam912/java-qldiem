@@ -142,8 +142,9 @@ public class DangNhap extends javax.swing.JFrame {
         lbError.setText("Đăng nhập thành công");
         MENU mn = new MENU();
         mn.setVisible(true);
-        mn.updateTable();
-        mn.updateTable2();
+        mn.updateTableSinhVien();
+        mn.updateTableMon();
+        mn.updateTableDiem();
         this.setVisible(false);
         // Ẩn cửa sổ đăng nhập
         
